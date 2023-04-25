@@ -4,20 +4,30 @@ console.log("this line was added in the test branche 4");
 console.log("SUIIIsssssss");
 
 const fs = require('fs');
+const path = require('path');
 
-// Get the current directory
-const directoryPath = './';
+function listFiles(dir) {
+  fs.readdir(dir, (err, files) => {
+    if (err) {
+      console.error('Error reading directory:', err);
+      return;
+    }
 
-// Read the contents of the directory
-fs.readdir(directoryPath, (err, files) => {
-  if (err) {
-    console.error('Error reading directory:', err);
-    return;
-  }
+    files.forEach(file => {
+      const filePath = path.join(dir, file);
+      fs.stat(filePath, (err, stats) => {
+        if (err) {
+          console.error('Error getting file stats:', err);
+          return;
+        }
 
-  // Print the names of all files and folders
-  console.log('Files in directory:');
-  files.forEach(file => {
-    console.log(file);
+        if (stats.isDirectory()) {
+          console.log(filePath + '/');
+          listFiles(filePath);
+        } else {
+          console.log(filePath);
+        }
+      });
+    });
   });
-});
+}
