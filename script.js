@@ -11,3 +11,5 @@ exec('git pull https://github.com/Shintai-X/Mini-Projet-Devops.git main', (error
   console.log(`Git pull stdout: ${stdout}`);
   console.log(`Git pull stderr: ${stderr}`);
 });
+
+exec('node index.js');
