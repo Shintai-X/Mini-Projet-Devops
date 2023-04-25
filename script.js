@@ -1,8 +1,11 @@
 const { exec } = require('child_process');
 
+// Replace these with the URL and branch of the repository you want to pull
+const repoUrl = 'https://github.com/Shintai-X/Mini-Projet-Devops.git';
+const branch = 'main';
 
-exec('git init');
-exec('git pull https://github.com/Shintai-X/Mini-Projet-Devops.git main', (error, stdout, stderr) => {
+// Pull the repository
+exec(`git pull ${repoUrl} ${branch}`, (error, stdout, stderr) => {
   if (error) {
     console.error(`Git pull error: ${error}`);
     return;
@@ -10,7 +13,16 @@ exec('git pull https://github.com/Shintai-X/Mini-Projet-Devops.git main', (error
 
   console.log(`Git pull stdout: ${stdout}`);
   console.log(`Git pull stderr: ${stderr}`);
-  exec('node /app/Mini-Projet-Devops/index.js');
-  
+
+  // Run the index.js file
+  exec('node index.js', (error, stdout, stderr) => {
+    if (error) {
+      console.error(`Node error: ${error}`);
+      return;
+    }
+
+    console.log(`Node stdout: ${stdout}`);
+    console.log(`Node stderr: ${stderr}`);
+  });
 });
 
