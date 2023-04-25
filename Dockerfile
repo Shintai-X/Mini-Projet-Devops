@@ -10,6 +10,7 @@ RUN   git clone https://github.com/Shintai-X/Mini-Projet-Devops.git --branch mai
 
 EXPOSE 80
 
+RUN chmod 777 /app/Mini-Projet-Devops/update.sh 
 
 CMD ["node", "/app/Mini-Projet-Devops/index.js"]
 
