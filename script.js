@@ -11,8 +11,7 @@ exec('git init', (error, stdout, stderr) => {
     return;
   }
 
-  console.log(`Git init stdout: ${stdout}`);
-  console.log(`Git init stderr: ${stderr}`);
+ 
 
   // Pull the repository
   exec(`git pull ${repoUrl} ${branch}`, (error, stdout, stderr) => {
@@ -21,7 +20,7 @@ exec('git init', (error, stdout, stderr) => {
       return;
     }
 
-    console.log(`Git pull stdout: ${stdout}`);
+
     console.log(`Git pull stderr: ${stderr}`);
 
     // Run the index.js file
@@ -32,7 +31,7 @@ exec('git init', (error, stdout, stderr) => {
       }
 
       console.log(`Node stdout: ${stdout}`);
-      console.log(`Node stderr: ${stderr}`);
+      
     });
   });
 });
