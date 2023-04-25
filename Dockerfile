@@ -10,10 +10,7 @@ RUN   git clone https://github.com/Shintai-X/Mini-Projet-Devops.git --branch mai
 
 EXPOSE 80
 
-RUN cp /app/Mini-Projet-Devops/update.sh /app/update.sh && \
-    chmod +x /app/update.sh
 
-ENTRYPOINT ["/app/update.sh"]
 
 
 
