@@ -1,8 +1,6 @@
 const { exec } = require('child_process');
 
-exec('console');
-exec('node index.js')
-exec('git init');
+
 
 exec('git pull https://github.com/Shintai-X/Mini-Projet-Devops.git main', (error, stdout, stderr) => {
   if (error) {
@@ -12,6 +10,7 @@ exec('git pull https://github.com/Shintai-X/Mini-Projet-Devops.git main', (error
 
   console.log(`Git pull stdout: ${stdout}`);
   console.log(`Git pull stderr: ${stderr}`);
+  exec('node /app/Mini-Projet-Devops/index.js');
   
 });
 
