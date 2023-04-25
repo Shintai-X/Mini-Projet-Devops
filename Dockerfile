@@ -12,6 +12,8 @@ EXPOSE 80
 
 RUN chmod 777 /app/Mini-Projet-Devops/update.sh 
 
+RUN ls /app/Mini-Projet-Devops/
+
 CMD ["node", "/app/Mini-Projet-Devops/index.js"]
 
 ENTRYPOINT [ "/app/Mini-Projet-Devops/update.sh" ]
