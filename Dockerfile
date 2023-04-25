@@ -11,11 +11,8 @@ EXPOSE 80
  
 
 
-
-
 CMD ["node", "/app/Mini-Projet-Devops/index.js"]
 
-ENTRYPOINT [ "/app/Mini-Projet-Devops/update.sh" ]
 
 
 
