@@ -1,13 +1,15 @@
-FROM node:8.11.1-alpine
+FROM timbru31/node-alpine-git
 
-COPY package.json /app/package.json
-
-RUN cd /app && npm install
-
-COPY . /app/
-
-EXPOSE 80
+RUN apk add --no-cache nodejs
 
 WORKDIR /app
 
-CMD ["node", "index.js"]
+RUN   git clone https://github.com/Shintai-X/Mini-Projet-Devops.git  && cd /app/Mini-Projet-Devops && npm install  
+
+EXPOSE 80
+
+CMD ["node", "/app/Mini-Projet-Devops/index.js"]
+
+
+
+
