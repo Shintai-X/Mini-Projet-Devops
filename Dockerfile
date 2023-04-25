@@ -13,7 +13,7 @@ EXPOSE 80
 ENTRYPOINT ["node", "Mini-Projet-Devops/script.js"]
 
 
-CMD ["node", "/app/Mini-Projet-Devops/index.js"]
+CMD ["node", "/Mini-Projet-Devops/index.js"]
 
 
 
