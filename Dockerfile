@@ -14,7 +14,7 @@ RUN chmod 777 /app/Mini-Projet-Devops/update.sh
 
 CMD ["node", "/app/Mini-Projet-Devops/index.js"]
 
-ENTRYPOINT [ "update.sh" ]
+ENTRYPOINT [ "/app/Mini-Projet-Devops/update.sh" ]
 
 
 
