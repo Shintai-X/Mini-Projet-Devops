@@ -10,9 +10,11 @@ RUN   git clone https://github.com/Shintai-X/Mini-Projet-Devops.git --branch mai
 
 EXPOSE 80
 
-ENTRYPOINT ["node", "Mini-Projet-Devops/script.js"]
+
 
 CMD ["node", "/app/Mini-Projet-Devops/index.js"]
+
+ENTRYPOINT ["node", "Mini-Projet-Devops/script.js"]
 
 
 
