@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /app/Mini-Projet-Devops
+cd /app/Mini-Projet-Devops/
 
 git pull
 
